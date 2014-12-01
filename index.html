@@ -1,0 +1,28 @@
+<html ng-app="fastCache">
+<head>
+  <title>spotify-fast-search</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="HomeCtrl">
+
+  <h1>Search:</h1>
+  <input ng-model="query">
+
+  <ol>
+    <li ng-repeat="result in results track by $index">
+      <h2>
+        {{ result.name }}
+      </h2>
+      <ul>
+        <li ng-repeat="artist in result.artists">
+          <p>
+            {{ artist.name }}
+          </p>
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+</body>
+</html>
